@@ -1,0 +1,37 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:53115",
+      "sslPort": 44349
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "IP_WHITE_LIST": "185.30.20.0/24;185.30.21.0/24;172.17.0.1;169.254.8.129",
+        "WEBHOOK_SECRET_KEY": "secretkey",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PORT": "8080"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    },
+    "PaymentProcessor": {
+      "commandName": "Project",
+      "launchUrl": "xsolla",
+      "environmentVariables": {
+        "FIRESTORE_EMULATOR_HOST": "localhost:5000",
+        "IP_WHITE_LIST": "185.30.20.0/24;185.30.21.0/24;172.17.0.1",
+        "WEBHOOK_SECRET_KEY": "secretkey",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PORT": "8080"
+      },
+      "applicationUrl": "http://localhost:32770"
+    }
+  }
+}
